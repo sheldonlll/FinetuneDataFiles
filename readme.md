@@ -1,4 +1,6 @@
-# LMFlow(gpt2):  (出现无语义信息的句词，如重复性出现????)
+# LMFlow(gpt2): 
+
+ (出现无语义信息的句词，如重复性出现????)
 在data目录下新建MIT文件夹  
 在MIT文件夹下新建train_modify文件夹，并将finetune数据文件放入  
 在MIT文件夹下新建test文件夹，并将evaluate数据文件放入  
@@ -15,7 +17,9 @@
 [2. ./run_evaluate.sh](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/run_evaluation.sh#L5)  
 
 
-# LMFlow(LLAMA-7B):  （将原有的gpt2模型替换成llama-7b模型，大体参数都相同，将一些如block_size更改小之后，报显存不足的错误）
+# LMFlow(LLAMA-7B): 
+
+（将原有的gpt2模型替换成llama-7b模型，大体参数都相同，将一些如block_size更改小之后，报显存不足的错误）
 使用gpt2模型，虽然效果和预期有差距，但是可以成功finetune。可能说明数据集大小或数据集设置上沒有问题
 而在替换为llama-7b之后，数据集等都不变的情况下，使用两张3090并行finetune或是用一张A40的显卡会报显存不够的错误
 1. 准备LLAMA模型：
@@ -64,7 +68,9 @@ dataset_path=${project_dir}/data/MIT/train
 ```
 
 
-# ChatGLM6B:  （finetune之后出现较严重的灾难性遗忘的现象，问与finetune不相关的问题，回答都或多或少牵扯到finetune数据相关的内容）
+# ChatGLM6B:  
+
+（finetune之后出现较严重的灾难性遗忘的现象，问与finetune不相关的问题，回答都或多或少牵扯到finetune数据相关的内容）
 clone the repo, skip large files: 
 `GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/THUDM/chatglm-6b`  
 
