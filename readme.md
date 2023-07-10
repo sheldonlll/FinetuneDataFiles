@@ -15,7 +15,7 @@
 [2. ./run_evaluate.sh](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/run_evaluation.sh#L5)  
 
 
-# LMFlow(LLAMA-7B):  （将原有的gpt2模型替换成llama-7b模型，大体参数都相同，将一些如block_size更改小之后，报内存不足的错误）
+# LMFlow(LLAMA-7B):  （将原有的gpt2模型替换成llama-7b模型，大体参数都相同，将一些如block_size更改小之后，报显存不足的错误）
 使用gpt2模型，虽然效果和预期有差距，但是可以成功finetune。可能说明数据集大小或数据集设置上沒有问题
 而在替换为llama-7b之后，数据集等都不变的情况下，使用两张3090并行finetune或是用一张A40的显卡会报显存不够的错误
 1. 准备LLAMA模型：
