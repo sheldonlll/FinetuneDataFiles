@@ -55,6 +55,8 @@ torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 12.55 GiB (GP
 ```
 dataset_path=${project_dir}/data/MIT/train
 
+--model_name_or_path /root/autodl-tmp/v3/llama-7b/
+
 --deepspeed examples/ds_config.json
 
 --block_size 128
