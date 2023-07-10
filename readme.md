@@ -25,12 +25,12 @@
 2. 在data目录下新建MIT文件夹  
 - 在MIT文件夹下新建train_modify文件夹，并将finetune数据文件放入  
 - 在MIT文件夹下新建test文件夹，并将evaluate数据文件放入  
-- [finetune数据：traindata_LLAMA.json](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/traindata_LMFlow.json)  
-- [evaluate数据：testdata_LLAMA.json](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/testdata_LMFlow.json)  
+- [finetune数据：traindata_LLAMA.json](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/traindata_LLAMA.json)  
+- [evaluate数据：testdata_LLAMA.json](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/testdata_LLAMA.json)  
  
 3. 将scripts目录中的run_finetune.sh文件替换为run_finetune_LLAMA.sh  切换到scripts目录中，执行命令： 
 
-- [./run_finetune_LLAMA.sh](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/run_finetune.sh#L16)  
+- [./run_finetune_LLAMA.sh](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/run_finetune_LLAMA.sh#L22C1-L22C1)  
 
 bug report: https://chat.openai.com/share/f5e953a9-b335-4c8f-8c75-13bd8250346d  
 
