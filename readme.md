@@ -1,4 +1,4 @@
-# LMFlow:  
+# LMFlow(gpt2):  (出现无语义信息的句词，如重复性出现????)
 在data目录下新建MIT文件夹  
 在MIT文件夹下新建train_modify文件夹，并将finetune数据文件放入  
 在MIT文件夹下新建test文件夹，并将evaluate数据文件放入  
@@ -15,7 +15,9 @@
 [2. ./run_evaluate.sh](https://github.com/sheldonlll/FinetuneDataFiles/blob/main/run_evaluation.sh#L5)  
 
 
-# LLAMA:  
+# LMFlow(LLAMA-7B):  （将原有的gpt2模型替换成llama-7b模型，大体参数都相同，将一些如block_size更改小之后，报内存不足的错误）
+使用gpt2模型，虽然效果和预期有差距，但是可以成功finetune。可能说明数据集大小或数据集设置上沒有问题
+而在替换为llama-7b之后，数据集等都不变的情况下，使用两张3090并行finetune或是用一张A40的显卡会报显存不够的错误
 1. 准备LLAMA模型：
 - git lfs install
 - git clone https://huggingface.co/huggyllama/llama-7b
@@ -43,17 +45,19 @@ torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 12.55 GiB (GP
 [2023-07-10 12:50:58,416] [ERROR] [launch.py:324:sigkill_handler] ['/root/miniconda3/envs/lmflow2/bin/python', '-u', '/root/LMFlow/examples/finetune.py', '--local_rank=1', '--model_name_or_path', '/root/autodl-tmp/v3/llama-7b/', '--dataset_path', '/root/LMFlow/data/MIT/train', '--output_dir', '/root/LMFlow/output_models/llama_finetune', '--overwrite_output_dir', '--num_train_epochs', '0.01', '--learning_rate', '2e-5', '--block_size', '128', '--per_device_train_batch_size', '1', '--deepspeed', 'examples/ds_config.json', '--bf16', '--run_name', 'finetune', '--validation_split_percentage', '0', '--logging_steps', '20', '--do_train', '--ddp_timeout', '72000', '--save_steps', '5000', '--dataloader_num_workers', '1'] exits with return code = 1
 '
 
-
 - run_finetune修改的地方：
 
 ```
 dataset_path=${project_dir}/data/MIT/train
 
 --deepspeed examples/ds_config.json
+
+--block_size 128
+
 ```
 
 
-# ChatGLM6B:  
+# ChatGLM6B:  （finetune之后出现较严重的灾难性遗忘的现象，问与finetune不相关的问题，回答都或多或少牵扯到finetune数据相关的内容）
 clone the repo, skip large files: 
 `GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/THUDM/chatglm-6b`  
 
