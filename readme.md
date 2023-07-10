@@ -34,11 +34,16 @@
 
 bug report: https://chat.openai.com/share/f5e953a9-b335-4c8f-8c75-13bd8250346d  
 
-' 
+... 
+
 torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 12.55 GiB (GPU 1; 23.69 GiB total capacity; 12.58 GiB already allocated; 10.38 GiB free; 12.58 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
-Time to load utils op: 0.4046976566314697 seconds
+Time to load utils op: 0.4046976566314697 seconds 
+
+... 
 
 torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 12.55 GiB (GPU 0; 23.69 GiB total capacity; 12.58 GiB already allocated; 10.38 GiB free; 12.58 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF  
+
+... 
 
 [2023-07-10 12:50:58,411] [INFO] [launch.py:318:sigkill_handler] Killing subprocess 1534
 [2023-07-10 12:50:58,415] [INFO] [launch.py:318:sigkill_handler] Killing subprocess 1535
